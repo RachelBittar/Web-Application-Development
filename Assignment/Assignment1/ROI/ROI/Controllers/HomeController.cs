@@ -27,24 +27,21 @@ namespace ROI.Controllers
         [HttpPost]
         public ViewResult DataReplyForm(UserDatas userdatas)  //Action
         {
-            return View("Thanks", userdatas);
+            if (ModelState.IsValid) //validate
+            {
+                Repository.AddResponse(userdatas);
+                return View("Thanks", userdatas.Name);
+            }
+            else
+            {
+                return View();
+            }
         }
-        //public IActionResult Contact() //Action
-        //{
-        //    ViewData["Message"] = "Your contact page.";
 
-        //    return View();
-        //}
+        public ViewResult ListResponses()
+        {
+            return View(Repository.Responses.Where(r => r.WillAttend == true));
+        }
 
-        //public IActionResult Privacy()
-        //{
-        //    return View();
-        //}
-
-        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        //public IActionResult Error()
-        //{
-        //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        //}
     }
 }
