@@ -8,11 +8,4 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Remove="Models\Middleware.cs" />
-    <Compile Remove="Models\EmptyClass.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Remove="wwwroot\css\Style.css" />
-  </ItemGroup>
 </Project>

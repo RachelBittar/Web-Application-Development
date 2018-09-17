@@ -1,0 +1,47 @@
+﻿@model ROI.Models.UserDatas
+@{
+    Layout = null;
+}
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+</head>
+<body>
+    <form asp-action="DataReplyForm" method="post">
+        <p>
+            <label asp-for="Name">Name:</label>
+            <input asp-for="Name" />
+        </p>
+
+        <p>
+            <label asp-for="LastName">Last name:</label>
+            <input asp-for="LastName" />
+        </p>
+
+        <p>
+            <label asp-for="Email">Email:</label>
+            <input asp-for="Email" />
+        </p>
+        <p>
+            <label asp-for="Phone">Phone:</label>
+            <input asp-for="Phone" />
+        </p>
+        <p>
+            <label>Total Number of Visitors?</label>
+            <select asp-for="NumberVisitor">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </p>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
